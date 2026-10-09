@@ -14,13 +14,27 @@ One command gives you three files, and every one of them is **decoded again befo
 
 ## Install
 
+Reuse it from any project, no copying files around:
+
 ```bash
-cd qrlogo
+# once per machine, as a command on your PATH (recommended)
+pipx install "qrlogo[all] @ git+ssh://git@github.com/lordalex/qrlogo.git"
+
+# or inside a project's own virtualenv
+pip install "qrlogo[all] @ git+ssh://git@github.com/lordalex/qrlogo.git"
+
+# or to work on the tool itself
+git clone git@github.com:lordalex/qrlogo.git && cd qrlogo
 python3 -m venv .venv && source .venv/bin/activate
-pip install -e ".[all]"        # [all] = decoding check (OpenCV) + SVG logos (cairosvg)
+pip install -e ".[all]"
 ```
 
-Without `[all]` it still works, but it will warn that it could not decode the results.
+`[all]` = the decoding check (OpenCV) + SVG logos (cairosvg). Without it the tool still works, but it
+warns that it could not decode the results. Upgrade later with `pipx upgrade qrlogo` (or re-run the
+install line). Pin a release with `...qrlogo.git@v0.1.0`.
+
+Each project keeps only its own **brand profile** (a small JSON file with colours and a logo path);
+the tool itself lives here. Example: `examples/brand.example.json`.
 
 ## Use
 
