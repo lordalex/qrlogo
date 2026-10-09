@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qrlogo"
+version = "0.1.0"
+description = "QR codes with your logo in the middle: SVG, PNG and e-mail-safe HTML table. Every output is decoded before it is accepted."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["qrcode>=7.4", "Pillow>=10", "numpy>=1.24"]
+
+[project.optional-dependencies]
+verify = ["opencv-python-headless>=4.8"]   # decode every output (recommended)
+svg = ["cairosvg>=2.7"]                     # SVG logos as input, and SVG output verification
+all = ["opencv-python-headless>=4.8", "cairosvg>=2.7"]
+
+[project.scripts]
+qrlogo = "qrlogo.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

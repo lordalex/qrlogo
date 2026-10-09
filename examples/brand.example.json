@@ -1,0 +1,17 @@
+{
+  "fg": "#1f1633",
+  "finder": "#6d28d9",
+  "bg": "#ffffff",
+  "quiet": 2,
+  "shape": "square",
+  "align": true,
+  "logo": "demo-logo.png",
+  "logo_crop": null,
+  "logo_scale": 0.27,
+  "logo_shape": "square",
+  "logo_plate": 0.35,
+  "formats": "svg,png,email",
+  "email_px": 5,
+  "email_cell": 1,
+  "email_colors": 3
+}
